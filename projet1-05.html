@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-05</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+ 
+</head>
+<body>
+    <div id="app">
+<p>Heure Fr : {{dateFr}}</p>
+<p>Heure Us : {{dateUs}}</p>
+<p>Heure Fr : {{dateFr2}}</p>
+<p>Heure Us : {{dateUs2}}</p>
+
+
+    </div>
+    <script>
+        //methode 
+        const app =Vue.createApp({
+            data(){
+                return{
+                    d: new Date(),
+                    dateFr2:new Date().toLocaleTimeString(),
+                    dateUs2:new Date().toLocaleTimeString('en-US')
+                }
+            },computed:{
+                dateFr() {
+                       return this.d.toLocaleTimeString()
+                },
+                dateUs() {
+                      return  this.d.toLocaleTimeString('en-US')
+                }
+
+            }
+        }); 
+        app.mount('#app');
+    </script>
+</body>
+</html>
