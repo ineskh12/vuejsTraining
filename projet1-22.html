@@ -10,7 +10,9 @@
 </head>
 <body>
     <div id="app">
+    <!-- div parent -->
  <div @keydown="actionParent">
+    <!-- input child-->
     <input type="text" @keydown="action($event)">
  </div>
     </div>
@@ -20,7 +22,13 @@
             methods:{
                 action(ev){
                     console.log('Evènement traité dans le input')
+                    // annule l'action par défaut du navigateur
+                    //  sur un event mais event continue a etre propagé aux 
+                    //parent de l'event 
                     ev.preventDefault();
+                    //stop la propagation de
+                    // l'event aus parentsde l'event sur lequel
+                    //l'event se produit
                   // ev.stopPropagation();
 
                 },

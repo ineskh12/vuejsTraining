@@ -11,7 +11,7 @@
 <body>
     <div id="app">
  <p>
-    <a href="https://www.google.com">Google</a>
+    <a href="https://www.google.com" @click="stop($event)">Google</a>
  
  </p>
 
@@ -23,12 +23,11 @@
   
     <script>
         app = Vue.createApp({
-            data () {
-                return {
-
-                }
-            },
+        
              methods:{
+                stop(ev){
+                    ev.preventDefault();
+                }
              
             }
             

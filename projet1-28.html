@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-28</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+ 
+</head>
+<body>
+    <div id="app">
+    <p>lister une chaine</p>
+   
+    
+        <li v-for="(elem,id) in elems">
+            {{ elem }}
+            <input type="button" value="supp" @click="supprimer(id)">
+
+          </li>
+    </div>
+    </div>
+  
+    <script>
+        app = Vue.createApp({
+            data(){
+                return {
+                  
+                    elems: ["test1" , "test2","test3","test4"]
+                }
+            }, methods: {
+                supprimer(i) {
+                    this.elems.splice(i,1); 
+                }
+            }
+            
+         } );
+
+        app.mount('#app');
+
+    </script>
+</body>
+</html>

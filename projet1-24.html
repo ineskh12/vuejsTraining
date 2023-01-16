@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-24</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+ 
+</head>
+<body>
+    <div id="app">
+    <!-- div parent -->
+ <div @keydown="actionParent">
+    <!-- input child-->
+    <input type="text" @keydown.prevent.stop="action($event)">
+ </div>
+ <button @click="action"> cliquez ici</button>
+ <input type="text" @keyup.code="action">
+<!--  //enter
+ //tab//delete up down right left -->
+    </div>
+  
+    <script>
+        app = Vue.createApp({
+            methods:{
+                action(ev){
+                    console.log('Evènement traité dans le input')
+                    // annule l'action par défaut du navigateur
+                    //  sur un event mais event continue a etre propagé aux 
+                    //parent de l'event 
+                   // ev.preventDefault();
+                    //stop la propagation de
+                    // l'event aus parentsde l'event sur lequel
+                    //l'event se produit
+                  // ev.stopPropagation();
+
+                },
+                actionParent(){
+                    console.log('Evènement traité dans le parent')
+                    
+                }
+            }
+            
+         } );
+
+        app.mount('#app');
+
+    </script>
+</body>
+</html>
