@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 2-08</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <bonjour-loc prenom="Jean"></bonjour-loc>
+        <bonjour-loc  prenom="Ines"></bonjour-loc>
+        <bonjour-loc  prenom="Ali"></bonjour-loc>
+    </div>
+    <script>
+        
+      //composant local
+      const BonjourLocal ={
+        template: '<div> Le composant local dit bonjour {{prenom}} </div>',
+        props :['prenom']
+         
+    }
+       const  app = Vue.createApp({
+         components :{
+          'bonjour-loc':BonjourLocal
+         }     
+         } );
+       
+        app.mount('#app');
+    </script>
+</body>
+</html>
