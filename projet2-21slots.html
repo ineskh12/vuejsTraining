@@ -11,11 +11,11 @@
 <body>
     <div id="app">
   <art titre="Titre de l'article">
-    <template v-slot:texte>
-
+    <!-- <template v-slot:texte> -->
+      <template #texte>
       <p>Texte de l'article</p>
     </template>
-   
+    <p> Ce texte est intégré dans le slot default</p>
   </art>
   
     </div>
@@ -29,6 +29,7 @@
          app.component('art',{
           template:`<div><h2>{{titre}}</h2>
                          <slot name="texte"></slot>
+                         <slot name="default"></slot>
                       </div> `,
 
           props:['titre']
