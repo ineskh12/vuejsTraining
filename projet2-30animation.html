@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 2-30</title>
+  <style>
+      img{
+        transition: opacity 5s ease-in;
+      }
+  </style>
+
+    <script>
+        //animation ou manipulation de dom
+        function cacherAfficher(){
+            //to get the elment by id
+            let ima = document.getElementById('chat');
+            let bout = document.getElementById('button');
+            //treat event
+            
+            if(bout.innerHTML == "Cacher"){
+                ima.innerHTML = 'Afficher';
+                //manipulate style
+                ima.setAttribute('style', 'opacity:0')
+            }else {
+                bout.innerHTML ='Cacher';
+                //manipulate style 
+                ima.setAttribute('style','opacity: 1');
+            }
+        }
+         
+ </script>
+</head>
+<body>
+ <button id="button" onclick="cacherAfficher();">Cacher</button>
+  <img src="img/venom.jpg" id="chat">
+</body>
+
+</html>
